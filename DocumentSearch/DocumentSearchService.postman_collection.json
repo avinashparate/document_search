@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "b6b238ef-cb43-45fa-878d-d896100c37f5",
+    "name": "DocumentSearchService",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "1271849"
+  },
+  "item": [
+    {
+      "name": "PostDocument",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Tenant-Id",
+            "value": "tenantA",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Distributed Systems at Scale\",\r\n    \"content\": \"Elasticsearch enables fast full-text search across millions of documents.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/documents",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "documents"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetDocumentById",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Tenant-Id",
+            "value": "tenantA",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/documents/a0c9db81-55ea-4567-8acb-383586c0f9a2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "documents",
+            "a0c9db81-55ea-4567-8acb-383586c0f9a2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetHealth",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DeleteDocumentById",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "X-Tenant-Id",
+            "value": "tenantA",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/documents/fb2beca9-dc56-40bd-9a80-82e30b4ec9a4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "documents",
+            "fb2beca9-dc56-40bd-9a80-82e30b4ec9a4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetMappings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9200/documents/_mapping?pretty",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9200",
+          "path": [
+            "documents",
+            "_mapping"
+          ],
+          "query": [
+            {
+              "key": "pretty",
+              "value": null
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetAllDocuments",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Tenant-Id",
+            "value": "tenantA",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:9200/documents/_search?pretty",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9200",
+          "path": [
+            "documents",
+            "_search"
+          ],
+          "query": [
+            {
+              "key": "pretty",
+              "value": null
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SearchByKeyword",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Tenant-Id",
+            "value": "tenantA",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/search?q='Elasticsearch'",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "search"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "'Elasticsearch'"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
