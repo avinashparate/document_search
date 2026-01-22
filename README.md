@@ -27,8 +27,9 @@ Prerequisites
 -.NET 8 SDK (optional, for debugging)
 
 Run Locally
-- git clone https://github.com/<your-username>/distributed-document-search.git
-- Navigate to Folder DocumentSearch.Api in Powershell
+- git clone https://github.com/avinashparate/document_search.git
+- Navigate to Folder document_search\DocumentSearch\DocumentSearch.Api in Powershell
+- Docker Desktop should be up and running
 - execute command  "docker-compose up --build"
 This will launch Service
 - export file DocumentSearchService.postman_collection in Postman which has collection of command
